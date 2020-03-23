@@ -139,10 +139,13 @@ return inc(add(dec(x),y))
 }
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
 function isEven(n){
-	if (Math.floor(n/2)*2===n) {
+	if (n===0) {
 		return true
-	}
+	} else if (n===1) {
 	return false 
+}	else {
+	return isEven(n-2)
+	}
 }
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
 function multiply(x,y) {
