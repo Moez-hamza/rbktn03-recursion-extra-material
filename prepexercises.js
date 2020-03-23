@@ -139,15 +139,30 @@ return inc(add(dec(x),y))
 }
 // 4.Write a function called isEven that, given a number n as a parameter, returns true if that number is even, and false otherwise; however, you need to do this without using the % operator
 function isEven(n){
-	if (n===0) {
+	if (Math.floor(n/2)*2===n) {
 		return true
 	}
-	return 
+	return false 
 }
 // 5.Write a function called multiply that accepts two numbers as parameters, and multiplies them together -- but without using the * operator; instead, you'll need to use repeated addition.
-
+function multiply(x,y) {
+	if (x===0 || y===0) {
+		return 0 
+	}  
+	return y + multiply(x-1,y)
+}
 // 6.Write a JavaScript program to get the integers in range (x, y)
-
+function range(x,y) {
+	if (x===y-1 || x===y ||x===y+1) {
+		return ''
+	} else if (x<y) {
+		x++
+		return x+','+range(x,y)
+	} else {
+		x--
+		return x+','+range(x,y)
+	}
+}
 //  range(1,9)   => '2, 3, 4, 5, 6, 7, 8'
 //  range(21,33) => '22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32'
 // Read about Increment and Decrement operators in JS
