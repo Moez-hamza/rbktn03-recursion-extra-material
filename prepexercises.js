@@ -204,14 +204,29 @@ function stringLength(str) {
 		
 	}
 // 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
-
+	function countChars (str,ch) { 
+		if (str==="") {
+			return 0
+		} 
+		else if (str[0]===ch) {
+			return 1 + countChars(str.slice(1),ch)
+		} else  {
+			return countChars(str.slice(1),ch)
+		}
+	}	
 //  // access the element at index 0
 //  'hello'[0]; // => 'h'
 //  'dog'[0]; // => 'd'
 // HINT: You'll also need to make use of the slice method as shown above in the exercise on computing the length of a string.
 
 // 4. Implement a function called indexOf that accepts two parameters: a string and a character, and returns the first index of character in the string. You'll need to make use of the techniques for accessing the first element of a string and the rest of the string (slice) as before.
-
+	function indexOf(str,ch){
+		if (str[0]===ch || str==="") {
+			return 0
+		}
+		 return 1 + indexOf(str.slice(1),ch)
+	}	
+			
 // 5.The power function in the lecture works, but can be made considerably faster through a method known as successive squaring. To get an idea of how this works, observe that:
 
 // Modify the power function to take advantage of this technique.
