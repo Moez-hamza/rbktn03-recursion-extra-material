@@ -201,8 +201,14 @@ function stringLength(str) {
 //  7 % 5; // => 2
 // Write a function called modulo that works like the % operator, but without using it.
 		function modulo(x, y){
- 
-    }
+ 			if (y===1) {
+ 				return 0 
+ 			} else if (x<y) {
+ 				return x
+ 			} else {
+ 				return modulo(x-y,y)
+ 			}
+ 		}
 
 // 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
 	function countChars (str,ch) { 
@@ -237,6 +243,18 @@ function stringLength(str) {
 		}
 		return base*pow(base,e-1)
 	}	
+
+	function powSquaring(base,e) {
+		if (e===0) {
+			return 1
+		} else if (e===1) {
+			return base 
+		} else if (e%2===0) {
+			return powSquaring(base*base,(e/2))
+		}else  {
+			return base*powSquaring(base*base,((e-1)/2))
+		}
+	}	
 // 6.Write function called reverse that take a string and return the revers string
 	function reverse(str) {
 		if (str==="") {
@@ -249,6 +267,15 @@ function stringLength(str) {
 //  'noitseuq ysae na eb dluoc siht'.
 
 // 7.Find the greatest common divisor of two numbers.
+
+function gcd(x,y){
+    if (x === 0){
+        return y;
+    }if (y === 0){
+        return x;
+    }
+        return gcd(y,x%y);
+}
 
 // 8.Find the lowest common multiple of two numbers. Assume that the two numbers are greater than or equal to 2.
 
