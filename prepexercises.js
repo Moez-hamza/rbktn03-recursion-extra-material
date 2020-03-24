@@ -200,9 +200,10 @@ function stringLength(str) {
 //  8 % 10; // => 8
 //  7 % 5; // => 2
 // Write a function called modulo that works like the % operator, but without using it.
-	function modulo (x,y) {
-		
-	}
+		function modulo(x, y){
+ 
+    }
+
 // 3.Write a function called countChars that accepts two parameters: a string and a character. This function should return a number representing the number of times that the character appears in string. To access the first element of a string, you can use the following syntax:
 	function countChars (str,ch) { 
 		if (str==="") {
@@ -228,11 +229,21 @@ function stringLength(str) {
 	}	
 			
 // 5.The power function in the lecture works, but can be made considerably faster through a method known as successive squaring. To get an idea of how this works, observe that:
-
+	
 // Modify the power function to take advantage of this technique.
-
+	function pow(base,e) {
+		if (e===0) {
+			return 1
+		}
+		return base*pow(base,e-1)
+	}	
 // 6.Write function called reverse that take a string and return the revers string
-
+	function reverse(str) {
+		if (str==="") {
+			return str 
+		}
+		return reverse(str.slice(1))+str[0]
+	}	
 //  reverse( 'Fatima' ) => 'amitaF'
 //  reverse( 'this could be an easy question ' ) =>
 //  'noitseuq ysae na eb dluoc siht'.
