@@ -63,7 +63,9 @@ function removeBadWords(){
 // If a number is divisible by 3 and 5, print 'fizzbuzz'.
 // Otherwise print the number itself.
 function fizzBuzz() {
+  var n=0 
 
+  
 }
 
 // Create a recursive funciton that will take any string and return a boolean based on whether or
